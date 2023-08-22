@@ -1,10 +1,14 @@
-import {pool} from '../dbconnection.js';
+import { pool } from '../dbconnection.js';
 
 export const ping = async (req, res) => {
     try {
-        const [result] = await pool.query('SELECT "pong"  AS result')
-        res.json(result[0])
+        const result = await pool.query('SELECT NOW()')
+        console.log(result);
+        res.status(200).json({
+            message: 'pong',
+            time: result.rows[0]
+        })
     } catch (error) {
-        return res.status(500).json('internal server error')
+        return res.status(500).json('internal server error') 
     }
 }
