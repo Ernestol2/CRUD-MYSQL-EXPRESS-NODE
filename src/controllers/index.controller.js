@@ -3,7 +3,6 @@ import { pool } from '../dbconnection.js';
 export const ping = async (req, res) => {
     try {
         const result = await pool.query('SELECT NOW()')
-        console.log(result);
         res.status(200).json({
             message: 'pong',
             time: result.rows[0]

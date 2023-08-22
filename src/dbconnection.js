@@ -6,5 +6,6 @@ const connectionString = DATABASE_URL
 
 export const pool = new pg.Pool({
     connectionString,
-    
 })
+
+/* remove ssl for production */

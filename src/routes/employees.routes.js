@@ -10,10 +10,6 @@ import {
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("hello world")
-})
-
 router.get("/createtable", createTable)
 
 router.get("/employees", getEmployees);
