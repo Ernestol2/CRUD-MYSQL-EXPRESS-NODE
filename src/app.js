@@ -2,7 +2,7 @@ import express from "express";
 import employeesRoutes from './routes/employees.routes.js'
 import indexRoutes from './routes/index.routes.js'
 import {dirname} from 'path'
-import path, { fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 
 
 const app = express()
